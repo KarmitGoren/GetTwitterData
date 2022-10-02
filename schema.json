@@ -1,0 +1,214 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "created_at": {
+      "type": "string"
+    },
+    "id": {
+      "type": "integer"
+    },
+    "id_str": {
+      "type": "string"
+    },
+    "text": {
+      "type": "string"
+    },
+    "source": {
+      "type": "string"
+    },
+    "truncated": {
+      "type": "boolean"
+    },
+    "user": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "id_str": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "screen_name": {
+          "type": "string"
+        },
+        "location": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "translator_type": {
+          "type": "string"
+        },
+        "protected": {
+          "type": "boolean"
+        },
+        "verified": {
+          "type": "boolean"
+        },
+        "followers_count": {
+          "type": "integer"
+        },
+        "friends_count": {
+          "type": "integer"
+        },
+        "listed_count": {
+          "type": "integer"
+        },
+        "favourites_count": {
+          "type": "integer"
+        },
+        "statuses_count": {
+          "type": "integer"
+        },
+        "created_at": {
+          "type": "string"
+        },
+        "utc_offset": {
+          "type": "None"
+        },
+        "time_zone": {
+          "type": "None"
+        },
+        "geo_enabled": {
+          "type": "boolean"
+        },
+        "lang": {
+          "type": "None"
+        },
+        "contributors_enabled": {
+          "type": "boolean"
+        },
+        "is_translator": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "id",
+        "id_str",
+        "name",
+        "screen_name",
+        "location",
+        "url",
+        "description",
+        "translator_type",
+        "protected",
+        "verified",
+        "followers_count",
+        "friends_count",
+        "listed_count",
+        "favourites_count",
+        "statuses_count",
+        "created_at",
+        "utc_offset",
+        "time_zone",
+        "geo_enabled",
+        "lang",
+        "contributors_enabled",
+        "is_translator"
+      ]
+    },
+    "geo": {
+      "type": "None"
+    },
+    "coordinates": {
+      "type": "None"
+    },
+    "place": {
+      "type": "None"
+    },
+    "contributors": {
+      "type": "None"
+    },
+    "entities": {
+      "type": "object",
+      "properties": {
+        "hashtags": {
+          "type": "array",
+          "items": {}
+        },
+        "urls": {
+          "type": "array",
+          "items": [
+            {
+              "type": "object",
+              "properties": {
+                "url": {
+                  "type": "string"
+                },
+                "expanded_url": {
+                  "type": "string"
+                },
+                "display_url": {
+                  "type": "string"
+                },
+                "indices": {
+                  "type": "array",
+                  "items": [
+                    {
+                      "type": "integer"
+                    },
+                    {
+                      "type": "integer"
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "url",
+                "expanded_url",
+                "display_url",
+                "indices"
+              ]
+            }
+          ]
+        },
+        "favorited": {
+          "type": "boolean"
+        },
+        "retweeted": {
+          "type": "boolean"
+        },
+        "filter_level": {
+          "type": "string"
+        },
+        "lang": {
+          "type": "string"
+        },
+        "timestamp_ms": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "hashtags",
+        "urls",
+        "favorited",
+        "retweeted",
+        "filter_level",
+        "lang",
+        "timestamp_ms"
+      ]
+    }
+  },
+  "required": [
+    "created_at",
+    "id",
+    "id_str",
+    "text",
+    "source",
+    "truncated",
+    "user",
+    "geo",
+    "coordinates",
+    "place",
+    "contributors",
+    "entities"
+  ]
+}
