@@ -30,24 +30,24 @@ createDependencies = BashOperator(
     dag=dag
 )
 #
-getTweets = BashOperator(
-    task_id='getTweets',
-    bash_command='python /tmp/pycharm_project_149/kafkaProducerTwitterAPI.py',
-    dag=dag,
-)
+# getTweets = BashOperator(
+#     task_id='getTweets',
+#     bash_command='python /tmp/pycharm_project_149/kafkaProducerTwitterAPI.py',
+#     dag=dag,
+# )
 
 
-saveToHDFS = BashOperator(
-    task_id='saveToHDFS',
-    bash_command='python /tmp/pycharm_project_149/sparkConsumerTwitterToHDFS.py',
-    dag=dag,
-)
-
-saveToMySql = BashOperator(
-    task_id='saveToMySql',
-    bash_command='python /tmp/pycharm_project_149/sparkConsumerTwitterToMySQL.py',
-    dag=dag
-)
+# saveToHDFS = BashOperator(
+#     task_id='saveToHDFS',
+#     bash_command='python /tmp/pycharm_project_149/sparkConsumerTwitterToHDFS.py',
+#     dag=dag,
+# )
+#
+# saveToMySql = BashOperator(
+#     task_id='saveToMySql',
+#     bash_command='python /tmp/pycharm_project_149/sparkConsumerTwitterToMySQL.py',
+#     dag=dag
+# )
 
 saveFromHiveTablesToGCP = BashOperator(
     task_id='saveFromHiveTablesToGCP',
@@ -60,15 +60,20 @@ updateCategory = BashOperator(
     bash_command='python /tmp/pycharm_project_149/saveFromGsheetsToMySQL.py',
     dag=dag
 )
-#
 
-# createDependencies >> saveFromHiveTablesToGCP >> updateCategory
+saveFromGsheetsToMySQL = BashOperator(
+    task_id='saveFromGsheetsToMySQL',
+    bash_command='python /tmp/pycharm_project_149/saveFromGsheetsToMySQL.py',
+    dag=dag
+)
+
+ createDependencies >> [saveFromHiveTablesToGCP, updateCategory,saveFromGsheetsToMySQL]
 
 #
-createDependencies >> getTweets
-createDependencies >> [saveToHDFS, saveToMySql]
-saveToHDFS >> saveFromHiveTablesToGCP
-saveToMySql >> updateCategory
+# createDependencies >> getTweets
+# createDependencies >> [saveToHDFS, saveToMySql]
+# saveToHDFS >> saveFromHiveTablesToGCP
+# saveToMySql >> updateCategory
 
 
 
