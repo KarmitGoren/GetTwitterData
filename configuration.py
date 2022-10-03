@@ -90,3 +90,11 @@ gs_email_address        = (15, "O", 14)
 gs_country_published    = (16, "P", 15)
 gs_any_treat            = (17, "Q", 16)
 gs_keywords_or_hashtags = (18, "R", 17)
+
+
+
+###########################################
+###                 Slack               ###
+###########################################
+slack_sch_msg_url = "https://hooks.slack.com/services/***********/***********/************************"
+slack_ah_msg_url = "https://hooks.slack.com/services/***********/***********/************************"
